@@ -14,11 +14,9 @@ class PostResource extends JsonResource
      */
     public function toArray($request)
     {
-        // return  parent::toArray($request);
-
         return [
             'id' => $this->id,
-            'group' => GroupResource::collection($this->whenLoaded('group'))
+            'group' => GroupResource::collection( $this->group)
         ];
     }
 }
